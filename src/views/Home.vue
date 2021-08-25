@@ -5,8 +5,8 @@
       <h1>VueXD 造轮子</h1>
       <h2>一个厉害的 didi 框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="https://github.com/deexiao/VueXD-UI">GitHub</a>
+        <router-link to="doc">开始</router-link>
       </p>
     </div>
   </div>

@@ -1,13 +1,15 @@
 <template>
-  <Deexiao />
+  <div>
+    导航栏 |
+    <router-link to="/">Deexiao</router-link> |
+    <router-link to="/xxx">Deexiao2</router-link>
+  </div>
+  <hr />
+  <router-view />
 </template>
 
 <script>
-import Deexiao from './components/Deexiao.vue'
 export default {
   name: 'App',
-  components: {
-    Deexiao,
-  },
 }
 </script>

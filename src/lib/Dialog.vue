@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="VueXD-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="VueXD-dialog-wrapper">
-      <div class="VueXD-dialog">
-        <header>
-          <slot name="title" />
-          <span @click="close" class="VueXD-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="VueXD-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="VueXD-dialog-wrapper">
+        <div class="VueXD-dialog">
+          <header>
+            <slot name="title" />
+            <span @click="close" class="VueXD-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 

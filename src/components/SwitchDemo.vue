@@ -1,5 +1,5 @@
 <template>
-  <div><Switch :true_OR_false="y" @input="y = $event" /></div>
+  <div><Switch v-model:value="y" /></div>
 </template>
 
 <script lang="ts">

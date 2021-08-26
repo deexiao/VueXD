@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{ checked: true_OR_false }">
+  <button @click="toggle" :class="{ checked: value }">
     <span></span>
   </button>
 </template>
@@ -7,11 +7,11 @@
 <script lang="ts">
 export default {
   props: {
-    true_OR_false: Boolean,
+    value: Boolean,
   },
   setup(props, context) {
     const toggle = () => {
-      context.emit('input', !props.true_OR_false)
+      context.emit('update:value', !props.value)
     }
     return { toggle }
   },

@@ -59,7 +59,9 @@ export default {
       }
     }
     const cancel = () => {
-      context.emit('cancel')
+      // 等同于 props.cancel && props.cancel()
+      // 意思是 cancel 存在的时候才去判断, 不存在就不执行
+      props.cancel?.()
       close()
     }
     return { close, onClickOverlay, ok, cancel }

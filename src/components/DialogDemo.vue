@@ -1,7 +1,12 @@
 <template>
   <h1>示例 1</h1>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="x"></Dialog>
+  <Dialog
+    v-model:visible="x"
+    :closeOnClickOverlay="true"
+    :ok="f1"
+    :cancel="f2"
+  ></Dialog>
 </template>
 
 <script lang="ts">
@@ -15,7 +20,11 @@ export default {
     const toggle = () => {
       x.value = !x.value
     }
-    return { toggle, x }
+    const f1 = () => {
+      return true
+    }
+    const f2 = () => {}
+    return { toggle, x, f1, f2 }
   },
 }
 </script>

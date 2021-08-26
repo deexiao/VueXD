@@ -1,12 +1,8 @@
 <template>
-  <Button
-    size="large"
-    disabled
-    @click="onClick"
-    @focus="onClick"
-    @mouseover="onClick"
-    >hello</Button
-  >
+  <Button>hello</Button>
+  <Button theme="button">你好</Button>
+  <Button theme="link">你好</Button>
+  <Button theme="text">你好</Button>
 </template>
 <script lang="ts">
 import Button from '../lib/Button.vue'

@@ -1,20 +1,19 @@
 <template>
-  <div :size="size">
-    <button v-bind="rest"><slot /></button>
-  </div>
+  <button class="VueXD-button" :class="`theme-${theme}`">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
 export default {
   inheritAttrs: false,
   props: {
-    size: String,
-    disabled: Boolean,
+    theme: {
+      type: String,
+      default: 'button',
+    },
   },
-  setup(props, context) {
-    const { size, ...rest } = context.attrs
-    return { size, rest }
-  },
+  setup(props, context) {},
 }
 </script>
 

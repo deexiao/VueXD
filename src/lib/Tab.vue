@@ -1,5 +1,5 @@
 <template>
-  <div>Tags组件</div>
+  <div>Tag组件</div>
 </template>
 
 <script lang="ts">

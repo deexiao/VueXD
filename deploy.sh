@@ -8,4 +8,4 @@ git branch -M master &&
 git remote add origin git@github.com:deexiao/VueXD-Website.git &&
 git push -f -u origin master &&
 cd -
-echo https://deexiao.github.io/vuexd-website/
+echo https://deexiao.com/VueXD-Website/

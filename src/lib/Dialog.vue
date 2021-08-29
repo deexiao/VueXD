@@ -1,73 +1,73 @@
 <template>
-  <template v-if="visible">
-    <Teleport to="body">
-      <div class="vuexd-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="vuexd-dialog-wrapper">
-        <div class="vuexd-dialog">
-          <header>
-            <slot name="title" />
-            <span @click="close" class="vuexd-dialog-close"></span>
-          </header>
-          <main>
-            <slot name="content" />
-          </main>
-          <footer>
-            <Button level="main" @click="ok">OK</Button>
-            <Button @click="cancel">Cancel</Button>
-          </footer>
-        </div>
+<template v-if="visible">
+  <Teleport to="body">
+    <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
+    <div class="gulu-dialog-wrapper">
+      <div class="gulu-dialog">
+        <header>
+          <slot name="title" />
+          <span @click="close" class="gulu-dialog-close"></span>
+        </header>
+        <main>
+          <slot name="content" />
+        </main>
+        <footer>
+          <Button level="main" @click="onClickOk">OK</Button>
+          <Button @click="onClickCancel">Cancel</Button>
+        </footer>
       </div>
-    </Teleport>
-  </template>
+    </div>
+  </Teleport>
+</template>
 </template>
 
-<script lang="ts">
-import Button from './Button.vue'
+<script lang="ts" setup="props, context">
+import { SetupContext } from 'vue';
+import Button from "./Button.vue";
+declare const props: {
+  visible: boolean;
+  closeOnClickOverlay: boolean; 
+  ok: () => boolean; 
+  cancel: () => void
+}
+declare const context: SetupContext
 export default {
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: false
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: true
     },
     ok: {
-      type: Function,
+      type: Function
     },
     cancel: {
-      type: Function,
-    },
+      type: Function
+    }
   },
   components: {
     Button,
   },
-  setup(props, context) {
-    const close = () => {
-      context.emit('update:visible', false)
-    }
-    const onClickOverlay = () => {
-      if (props.closeOnClickOverlay) {
-        close()
-      }
-    }
-    const ok = () => {
-      if (props.ok?.() !== false) {
-        close()
-      }
-    }
-    const cancel = () => {
-      props.cancel?.()
-      close()
-    }
-    return {
-      close,
-      onClickOverlay,
-      ok,
-      cancel,
-    }
-  },
+};
+export const close = () => {
+  context.emit('update:visible', false)
+}
+export const onClickOverlay = () => {
+  if (props.closeOnClickOverlay) {
+    close()
+  }
+}
+export const onClickOk = () => {
+  if (props.ok && props.ok() !== false) {
+    close()
+  }
+}
+export const onClickCancel = () => {
+  props.cancel && props.cancel()
+  close()
 }
 </script>
 
@@ -75,7 +75,7 @@ export default {
 $radius: 4px;
 $border-color: #d9d9d9;
 
-.vuexd-dialog {
+.gulu-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
@@ -100,7 +100,7 @@ $border-color: #d9d9d9;
     z-index: 11;
   }
 
-  > header {
+  >header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -109,11 +109,11 @@ $border-color: #d9d9d9;
     font-size: 20px;
   }
 
-  > main {
+  >main {
     padding: 12px 16px;
   }
 
-  > footer {
+  >footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -144,6 +144,7 @@ $border-color: #d9d9d9;
     &::after {
       transform: translate(-50%, -50%) rotate(45deg);
     }
+
   }
 }
 </style>

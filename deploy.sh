@@ -5,7 +5,7 @@ git init &&
 git add . &&
 git commit -m "update" &&
 git branch -M master &&
-git remote add origin git@gitee.com:frankfang/vuexd-ui-website-1.git &&
+git remote add origin git@github.com:deexiao/VueXD-Website.git &&
 git push -f -u origin master &&
 cd -
-echo https://frankfang.gitee.io/vuexd-ui-website-1/
+echo https://deexiao.github.io/vuexd-website/

@@ -1,44 +1,44 @@
 <template>
-  <template v-if="visible">
-    <Teleport to="body">
-      <div class="VueXD-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="VueXD-dialog-wrapper">
-        <div class="VueXD-dialog">
-          <header>
-            <slot name="title" />
-            <span @click="close" class="VueXD-dialog-close"></span>
-          </header>
-          <main>
-            <slot name="content" />
-          </main>
-          <footer>
-            <Button level="main" @click="ok">OK</Button>
-            <Button @click="cancel">Cancel</Button>
-          </footer>
-        </div>
+<template v-if="visible">
+  <Teleport to="body">
+    <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
+    <div class="gulu-dialog-wrapper">
+      <div class="gulu-dialog">
+        <header>
+          <slot name="title" />
+          <span @click="close" class="gulu-dialog-close"></span>
+        </header>
+        <main>
+          <slot name="content" />
+        </main>
+        <footer>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
+        </footer>
       </div>
-    </Teleport>
-  </template>
+    </div>
+  </Teleport>
+</template>
 </template>
 
 <script lang="ts">
-import Button from './Button.vue'
+import Button from "./Button.vue";
 export default {
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: false
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: true
     },
     ok: {
-      type: Function,
+      type: Function
     },
     cancel: {
-      type: Function,
-    },
+      type: Function
+    }
   },
   components: {
     Button,
@@ -65,17 +65,17 @@ export default {
       close,
       onClickOverlay,
       ok,
-      cancel,
+      cancel
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
 
-.VueXD-dialog {
+.gulu-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
@@ -100,7 +100,7 @@ $border-color: #d9d9d9;
     z-index: 11;
   }
 
-  > header {
+  >header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -109,11 +109,11 @@ $border-color: #d9d9d9;
     font-size: 20px;
   }
 
-  > main {
+  >main {
     padding: 12px 16px;
   }
 
-  > footer {
+  >footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -144,6 +144,7 @@ $border-color: #d9d9d9;
     &::after {
       transform: translate(-50%, -50%) rotate(45deg);
     }
+
   }
 }
 </style>

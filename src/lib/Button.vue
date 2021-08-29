@@ -1,24 +1,24 @@
 <template>
-  <button class="VueXD-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="VueXD-loadingIndicator"></span>
+  <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot />
   </button>
 </template>
 <script lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 export default {
   props: {
     theme: {
       type: String,
-      default: 'button',
+      default: "button",
     },
     size: {
       type: String,
-      default: 'normal',
+      default: "normal",
     },
     level: {
       type: String,
-      default: 'normal',
+      default: "normal",
     },
     disabled: {
       type: Boolean,
@@ -26,21 +26,21 @@ export default {
     },
     loading: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   setup(props) {
-    const { theme, size, level } = props
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
-        [`VueXD-theme-${theme}`]: theme,
-        [`VueXD-size-${size}`]: size,
-        [`VueXD-level-${level}`]: level,
-      }
-    })
-    return { classes }
+        [`gulu-theme-${theme}`]: theme,
+        [`gulu-size-${size}`]: size,
+        [`gulu-level-${level}`]: level,
+      };
+    });
+    return { classes };
   },
-}
+};
 </script>
 <style lang="scss">
 $h: 32px;
@@ -50,7 +50,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.VueXD-button {
+.gulu-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -79,7 +79,7 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.VueXD-theme-link {
+  &.gulu-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -88,7 +88,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.VueXD-theme-text {
+  &.gulu-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -97,18 +97,18 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.VueXD-size-big {
+  &.gulu-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.VueXD-size-small {
+  &.gulu-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.VueXD-theme-button {
-    &.VueXD-level-main {
+  &.gulu-theme-button {
+    &.gulu-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -118,7 +118,7 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.VueXD-level-danger {
+    &.gulu-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -129,8 +129,8 @@ $grey: grey;
       }
     }
   }
-  &.VueXD-theme-link {
-    &.VueXD-level-danger {
+  &.gulu-theme-link {
+    &.gulu-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -138,15 +138,15 @@ $grey: grey;
       }
     }
   }
-  &.VueXD-theme-text {
-    &.VueXD-level-main {
+  &.gulu-theme-text {
+    &.gulu-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.VueXD-level-danger {
+    &.gulu-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -154,7 +154,7 @@ $grey: grey;
       }
     }
   }
-  &.VueXD-theme-button {
+  &.gulu-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -163,31 +163,26 @@ $grey: grey;
       }
     }
   }
-  &.VueXD-theme-link,
-  &.VueXD-theme-text {
+  &.gulu-theme-link, &.gulu-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .VueXD-loadingIndicator {
+  > .gulu-loadingIndicator{
     width: 14px;
     height: 14px;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 8px;
+    border-radius: 8px; 
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: VueXD-spin 1s infinite linear;
+    animation: gulu-spin 1s infinite linear;
   }
 }
-@keyframes VueXD-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+@keyframes gulu-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
 }
 </style>

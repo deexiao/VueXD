@@ -3,7 +3,7 @@
     <div class="topnavAndBanner">
       <Topnav />
       <div class="banner">
-        <h1>VueXD UI</h1>
+        <h1>轱辘UI</h1>
         <h2>一个厉害的 UI 框架</h2>
         <p class="actions">
           <a href="https://github.com">GitHub</a>
@@ -52,6 +52,7 @@ export default {
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #007974;
+
 .topnavAndBanner {
   background: linear-gradient(
     145deg,
@@ -60,18 +61,23 @@ $color: #007974;
   );
   clip-path: ellipse(80% 60% at 50% 40%);
 }
+
 .features {
   margin: 64px auto;
   width: 400px;
+
   @media (min-width: 800px) {
     width: 800px;
   }
+
   @media (min-width: 1200px) {
     width: 1200px;
   }
+
   > ul {
     display: flex;
     flex-wrap: wrap;
+
     > li {
       width: 400px;
       margin: 16px 0;
@@ -83,21 +89,25 @@ $color: #007974;
         'icon text';
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr auto;
+
       > svg {
         grid-area: icon;
         width: 64px;
         height: 64px;
       }
+
       > h3 {
         grid-area: title;
         font-size: 28px;
       }
+
       > p {
         grid-area: text;
       }
     }
   }
 }
+
 .banner {
   color: $color;
   padding: 100px 0;
@@ -105,8 +115,10 @@ $color: #007974;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   > .actions {
     padding: 8px 0;
+
     a {
       margin: 0 8px;
       background: $green;
@@ -114,6 +126,7 @@ $color: #007974;
       display: inline-block;
       padding: 8px 24px;
       border-radius: $border-radius;
+
       &:hover {
         text-decoration: none;
       }

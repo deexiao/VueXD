@@ -5,27 +5,28 @@ export const openDialog = (options) => {
   const div = document.createElement("div");
   document.body.appendChild(div);
   const close = () => {
-    //@ts-ignore
     app.unmount(div);
     div.remove();
   };
   const app = createApp({
     render() {
-      // h(Dialog, Dialog的属性)
-      return h(Dialog,{
-        visible: true,
-        "onUpdate:visible": (newVisible) => {
-          if (newVisible === false) {
-            close();
-          }
+      return h(
+        Dialog,
+        {
+          visible: true,
+          "onUpdate:visible": (newVisible) => {
+            if (newVisible === false) {
+              close();
+            }
+          },
+          ok, cancel
         },
-        ok, cancel
-      },
-      {
-        title,
-        content,
-      });
+        {
+          title,
+          content,
+        }
+      );
     },
   });
   app.mount(div);
-}; 
+};

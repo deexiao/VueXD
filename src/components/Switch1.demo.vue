@@ -3,12 +3,14 @@
 </demo>
 
 <template>
-  <Switch v-model:value="bool" />
+<Switch v-model:value="bool" />
 </template>
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue'
-import { ref } from 'vue'
+import {
+  ref
+} from 'vue'
 export default {
   components: {
     Switch,
@@ -16,8 +18,8 @@ export default {
   setup() {
     const bool = ref(false)
     return {
-      bool,
+      bool
     }
-  },
+  }
 }
 </script>

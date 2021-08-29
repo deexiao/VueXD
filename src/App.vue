@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { provide, ref } from 'vue'
+import { ref, provide } from 'vue'
 import { router } from './router'
 
 export default {

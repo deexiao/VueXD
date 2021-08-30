@@ -227,6 +227,7 @@ $color: #4e5875;
 .features {
   margin: 64px auto;
   padding: 0 16px;
+
   a {
     font-size: 2ch;
   }
@@ -236,7 +237,13 @@ $color: #4e5875;
   }
   @media (min-width: 800px) {
     width: 800px;
-
+    a {
+      font-size: 2.4ch;
+    }
+    p {
+      font-size: 1.65ch;
+      color: #61646e;
+    }
     > ul {
       > li {
         width: 50%;

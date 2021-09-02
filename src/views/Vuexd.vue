@@ -1,34 +1,13 @@
 <template>
   <div>
     <div class="topnavAndBanner">
-      <!-- <Topnav /> -->
-      <div class="topnav">
-        <router-link to="/" class="logo">
-          <svg class="icon">
-            <use xlink:href="#icon-king"></use>
-          </svg>
-        </router-link>
-
-        <ul class="menu">
-          <a href="https://www.deexiao.com">旧版主页</a>
-          <!-- <li>
-        <router-link to="/doc">旧版主页</router-link>
-      </li> -->
-        </ul>
-        <!-- <svg
-          v-if="toggleMenuButtonVisible"
-          class="toggleAside"
-          @click="toggleMenu"
-        >
-          <use xlink:href="#icon-menu"></use>
-        </svg> -->
-      </div>
+      <Topnav />
       <div class="banner">
-        <h1>萧 笛</h1>
-        <h3>有态度的前端开发者</h3>
+        <h1>造轮子</h1>
+        <h3>一个自建的 Vue 3 框架</h3>
         <p class="actions">
           <a href="https://github.com/deexiao/VueXD">GitHub</a>
-          <a href="../Resume.pdf">简历</a>
+          <router-link to="/doc">开始</router-link>
         </p>
       </div>
       <div>
@@ -74,44 +53,37 @@
       <ul>
         <li>
           <svg>
-            <use xlink:href="#icon-vuex"></use>
+            <use xlink:href="#icon-vue"></use>
           </svg>
-          <router-link to="/vue-xd">我造的小轮子</router-link>
-          <p>基于 Vue 3 造轮子</p>
+          <a>基于 Vue 3</a>
+          <p>使用了 Composition API</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-seatsfinder"></use>
+            <use xlink:href="#icon-ts"></use>
           </svg>
-          <!-- <a href="https://apps.apple.com/cn/app/seatsfinder/id1111929351"
-            >SeatsFinder</a
-          > -->
-          <router-link to="/seatsfinder">SeatsFinder</router-link>
-
-          <p>一款多平台的抢课软件</p>
+          <a>基于 TypeScript</a>
+          <p>源代码采用 TypeScript 书写</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-stocktakes"></use>
+            <use xlink:href="#icon-scss"></use>
           </svg>
-          <a
-            href="https://apps.apple.com/cn/app/stocktakes/id1446177678?mt=8%22%3EStockTakes"
-            >StockTakes</a
-          >
-          <p>一款 iOS 下的库存计数器</p>
+          <a>基于 SCSS</a>
+          <p>开发效率更高且易维护</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-morney"></use>
+            <use xlink:href="#icon-light"></use>
           </svg>
-          <a href="https://deexiao.com/morney-website/#/money">记账 APP</a>
-          <p>基于 Vue 2 的记账本</p>
+          <a>代码易读</a>
+          <p>模块化的源代码简单明了</p>
         </li>
       </ul>
     </div>
   </div>
   <!-- <div class="content flex">
-    <a href="deexiao.com">旧版主页</a>
+    <p>deexiao.com - 2021 - 造轮子</p>
   </div> -->
 </template>
 
@@ -237,75 +209,16 @@ p {
 </style>
 
 <style lang="scss" scoped>
-$green: #8a96dd;
+$green: #7db490;
 $border-radius: 20px;
 $color: #4e5875;
-// body {
-//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-//     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-// }
-.topnav {
-  color: $color;
-  display: flex;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-  justify-content: center;
-  align-items: center;
 
-  > .logo {
-    max-width: 6em;
-    margin-right: auto;
-
-    > svg {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  > .menu {
-    display: flex;
-    white-space: nowrap;
-    flex-wrap: nowrap;
-
-    > li {
-      margin: 0 1em;
-    }
-  }
-
-  > .toggleAside {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
-  }
-
-  @media (max-width: 500px) {
-    > .menu {
-      display: none;
-    }
-
-    > .logo {
-      margin: 0 auto;
-    }
-
-    > .toggleAside {
-      display: inline-block;
-    }
-  }
-}
 .topnavAndBanner {
+  background: rgb(255, 255, 255);
   background: linear-gradient(
-    156deg,
+    153deg,
     rgba(255, 255, 255, 1) 0%,
-    rgba(183, 205, 255, 1) 41%,
-    rgba(151, 128, 255, 1) 100%
+    rgba(98, 182, 135, 1) 100%
   );
   // clip-path: ellipse(80% 60% at 50% 40%);
 }
@@ -315,8 +228,8 @@ $color: #4e5875;
   margin: 24px auto;
 
   padding: 0 26px;
-
   color: #505873;
+
   > router-link a {
     font-size: 2ch;
   }

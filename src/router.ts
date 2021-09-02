@@ -1,5 +1,7 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
+import Vuexd from "./views/Vuexd.vue";
+import SeatsFinder from "./views/SeatsFinder.vue";
 import Doc from "./views/Doc.vue";
 import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue";
@@ -16,7 +18,9 @@ const md = string => h(Markdown, { content: string, key: string })
 export const router = createRouter({
   history: history,
   routes: [
-    { path: "/", component: Home },
+    { path: "/", component: Home, meta: {title: "Di Xiao"} },
+    { path: "/vue-xd", component: Vuexd, meta: {title: "造轮子"}},
+    { path: "/seatsfinder", component: SeatsFinder, meta: {title: "SeatsFinder"}},
     {
       path: "/doc",
       component: Doc,
@@ -34,4 +38,13 @@ export const router = createRouter({
   ],
 });
 router.afterEach(() => {
+
 });
+
+router.beforeEach((to, from, next) => {
+	/* 路由发生变化修改页面title */
+	if (to.meta.title) {
+		document.title = to.meta.title
+	}
+	next()
+})

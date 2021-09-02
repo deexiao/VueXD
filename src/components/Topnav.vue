@@ -1,16 +1,26 @@
 <template>
   <div class="topnav">
     <router-link to="/" class="logo">
-      <svg class="icon">
+      <svg v-if="currentRoute === '/vue-xd'" class="icon">
+        <use xlink:href="#icon-king2"></use>
+      </svg>
+      <svg v-else-if="currentRoute === '/doc/intro'" class="icon">
+        <use xlink:href="#icon-king3"></use>
+      </svg>
+      <svg v-else-if="currentRoute === '/seatsfinder'" class="icon">
+        <use xlink:href="#icon-king4"></use>
+      </svg>
+      <svg v-else class="icon">
         <use xlink:href="#icon-king"></use>
       </svg>
     </router-link>
 
     <!-- <ul class="menu">
-      <li>
-        <router-link to="/doc">文档</router-link>
-      </li>
-    </ul> -->
+      <a href="https://www.deexiao.com">旧版主页</a> -->
+    <!-- <li>
+        <router-link to="/doc">旧版主页</router-link>
+      </li> -->
+    <!-- </ul> -->
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
       <use xlink:href="#icon-menu"></use>
     </svg>
@@ -19,6 +29,8 @@
 
 <script lang="ts">
 import { inject, Ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 export default {
   props: {
@@ -32,8 +44,13 @@ export default {
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value
     }
+    const route = useRoute()
+    const path = computed(() => route.path)
+    const currentRoute = path.value
+    console.log(currentRoute)
     return {
       toggleMenu,
+      currentRoute,
     }
   },
 }

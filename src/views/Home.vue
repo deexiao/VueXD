@@ -13,7 +13,7 @@
         <h3>有态度的前端开发者</h3>
         <p class="actions">
           <a href="https://github.com/deexiao">GitHub</a>
-          <a href="../Resume.pdf" target="_blank">简历</a>
+          <a href="../media/Resume.pdf">简历</a>
         </p>
       </div>
       <div>

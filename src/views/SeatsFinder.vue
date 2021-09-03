@@ -6,8 +6,8 @@
         <h1>SeatsFinder</h1>
         <h3>一款 iOS 下的库存计数器</h3>
         <p class="actions">
-          <a href="../SeatsFinder.html">中文介绍</a>
-          <a href="../SeatsFinderEnglish.html">英文介绍</a>
+          <a href="../seatsfinder.html">中文介绍</a>
+          <a href="../seatsfinderenglish.html">英文介绍</a>
         </p>
       </div>
       <div>
@@ -52,36 +52,44 @@
     <div class="features">
       <ul>
         <li>
-          <svg>
-            <use xlink:href="#icon-apple"></use>
+          <svg class="bt-gm">
+            <a href="https://apps.apple.com/cn/app/seatsfinder/id1111929351">
+              <use xlink:href="#icon-apple"></use>
+            </a>
           </svg>
           <a href="https://apps.apple.com/cn/app/seatsfinder/id1111929351"
             >iOS 端</a
           >
-          <p>基于Swift、ASP.NET、SQL Server</p>
+          <p>基于Swift、ASP.NET</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-web"></use>
+          <svg class="bt-gm">
+            <a href="https://seatsfinderweb.azurewebsites.net/">
+              <use xlink:href="#icon-web"></use>
+            </a>
           </svg>
           <a href="https://seatsfinderweb.azurewebsites.net/">Web 端</a>
           <p>对于 iOS 进行重构</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-windows"></use>
+          <svg class="bt-gm">
+            <a href="https://github.com/deexiao/SeatsFinder-Bot">
+              <use xlink:href="#icon-windows"></use>
+            </a>
           </svg>
           <a href="https://github.com/deexiao/SeatsFinder-Bot">PC 端</a>
-          <p>基于 WCF 对此项目进行重构</p>
+          <p>基于 WCF 对项目重构</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-python"></use>
+          <svg class="bt-gm">
+            <a href="https://github.com/deexiao/SeatsFinderBot-Python">
+              <use xlink:href="#icon-python"></use>
+            </a>
           </svg>
           <a href="https://github.com/deexiao/SeatsFinderBot-Python"
             >Python 端</a
           >
-          <p>采用 Selenium 进行爬虫, 更方便</p>
+          <p>采用 Selenium 进行爬虫</p>
         </li>
       </ul>
     </div>
@@ -101,6 +109,31 @@ export default {
 </script>
 
 <style scoped>
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+    transform: scale(1.1); /*放大1.1倍*/
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+.bt-gm {
+  width: 150px;
+  height: 200px;
+  background-size: 150% 200%;
+  -webkit-animation-name: scaleDraw; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 3s; /*动画所花费的时间*/
+}
+
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
 

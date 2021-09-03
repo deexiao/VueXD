@@ -1,34 +1,19 @@
 <template>
   <div>
     <div class="topnavAndBanner">
-      <!-- <Topnav /> -->
       <div class="topnav">
         <router-link to="/" class="logo">
           <svg class="icon">
             <use xlink:href="#icon-king"></use>
           </svg>
         </router-link>
-
-        <ul class="menu">
-          <a href="https://www.deexiao.com">旧版主页</a>
-          <!-- <li>
-        <router-link to="/doc">旧版主页</router-link>
-      </li> -->
-        </ul>
-        <!-- <svg
-          v-if="toggleMenuButtonVisible"
-          class="toggleAside"
-          @click="toggleMenu"
-        >
-          <use xlink:href="#icon-menu"></use>
-        </svg> -->
       </div>
       <div class="banner">
         <h1>萧 笛</h1>
         <h3>有态度的前端开发者</h3>
         <p class="actions">
-          <a href="https://github.com/deexiao/VueXD">GitHub</a>
-          <a href="../Resume.pdf">简历</a>
+          <a href="https://github.com/deexiao">GitHub</a>
+          <a href="../Resume.pdf" target="_blank">简历</a>
         </p>
       </div>
       <div>
@@ -73,26 +58,32 @@
     <div class="features">
       <ul>
         <li>
-          <svg>
-            <use xlink:href="#icon-vuex"></use>
+          <svg class="bt-gm">
+            <router-link to="/vue-xd">
+              <use xlink:href="#icon-vuex"></use>
+            </router-link>
           </svg>
+
           <router-link to="/vue-xd">我造的小轮子</router-link>
           <p>基于 Vue 3 造轮子</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-seatsfinder"></use>
+          <svg class="bt-gm">
+            <router-link to="/seatsfinder">
+              <use xlink:href="#icon-seatsfinder"></use>
+            </router-link>
           </svg>
-          <!-- <a href="https://apps.apple.com/cn/app/seatsfinder/id1111929351"
-            >SeatsFinder</a
-          > -->
           <router-link to="/seatsfinder">SeatsFinder</router-link>
 
           <p>一款多平台的抢课软件</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-stocktakes"></use>
+          <svg class="bt-gm">
+            <a
+              href="https://apps.apple.com/cn/app/stocktakes/id1446177678?mt=8%22%3EStockTakes"
+            >
+              <use xlink:href="#icon-stocktakes"></use>
+            </a>
           </svg>
           <a
             href="https://apps.apple.com/cn/app/stocktakes/id1446177678?mt=8%22%3EStockTakes"
@@ -101,8 +92,10 @@
           <p>一款 iOS 下的库存计数器</p>
         </li>
         <li>
-          <svg>
-            <use xlink:href="#icon-morney"></use>
+          <svg class="bt-gm">
+            <a href="https://deexiao.com/morney-website/#/money">
+              <use xlink:href="#icon-morney"></use>
+            </a>
           </svg>
           <a href="https://deexiao.com/morney-website/#/money">记账 APP</a>
           <p>基于 Vue 2 的记账本</p>
@@ -125,6 +118,31 @@ export default {
 </script>
 
 <style scoped>
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+    transform: scale(1.1); /*放大1.1倍*/
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+.bt-gm {
+  width: 150px;
+  height: 200px;
+  background-size: 150% 200%;
+  -webkit-animation-name: scaleDraw; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 3s; /*动画所花费的时间*/
+}
+
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 body {

@@ -52,28 +52,28 @@
     <div class="features">
       <ul>
         <li>
-          <svg>
+          <svg class="bt-gm">
             <use xlink:href="#icon-vue"></use>
           </svg>
           <a>基于 Vue 3</a>
           <p>使用了 Composition API</p>
         </li>
         <li>
-          <svg>
+          <svg class="bt-gm">
             <use xlink:href="#icon-ts"></use>
           </svg>
           <a>基于 TypeScript</a>
           <p>源代码采用 TypeScript 书写</p>
         </li>
         <li>
-          <svg>
+          <svg class="bt-gm">
             <use xlink:href="#icon-scss"></use>
           </svg>
           <a>基于 SCSS</a>
           <p>开发效率更高且易维护</p>
         </li>
         <li>
-          <svg>
+          <svg class="bt-gm">
             <use xlink:href="#icon-light"></use>
           </svg>
           <a>代码易读</a>
@@ -97,6 +97,31 @@ export default {
 </script>
 
 <style scoped>
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+  0% {
+    transform: scale(1); /*开始为原始大小*/
+  }
+  25% {
+    transform: scale(1.1); /*放大1.1倍*/
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+.bt-gm {
+  width: 150px;
+  height: 200px;
+  background-size: 150% 200%;
+  -webkit-animation-name: scaleDraw; /*关键帧名称*/
+  -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+  -webkit-animation-duration: 3s; /*动画所花费的时间*/
+}
+
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
 body {

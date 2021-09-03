@@ -4,8 +4,8 @@ cd dist &&
 git init &&
 git add . &&
 git commit -m "update" &&
-git branch -M master &&
-git remote add origin git@github.com:deexiao/VueXD-Website.git &&
-git push -f -u origin master &&
+git branch -M main &&
+git remote add origin git@github.com:deexiao/deexiao.github.io.git &&
+git push -f -u origin main &&
 cd -
-echo https://deexiao.com/VueXD-Website/
+echo https://deexiao.github.io/
